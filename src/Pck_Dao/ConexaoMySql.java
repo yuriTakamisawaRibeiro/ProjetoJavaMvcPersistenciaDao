@@ -6,18 +6,24 @@ import java.sql.SQLException;
 
 public class ConexaoMySql {
 
-    public Connection conectaBD() {
+    private static final String url = "jdbc:mysql://localhost:3306/empresa_db";
+    private static final String user = "root";
+    private static final String password = "";
+    private static Connection conn = null;
 
-        Connection conn = null;
+    public static Connection conectaBD() {
 
         try {
-            String url = "jdbc:mysql://localhost:3306/empresa_db?user=root&password=";
+            if (conn == null) {
+                conn = DriverManager.getConnection(url, user, password);
+                return conn;
+            } else
+                return conn;
 
-            conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
             System.out.println("Erro ConexaoMySql: " + e.getMessage());
+            return null;
         }
 
-        return conn;
     }
 }
