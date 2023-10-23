@@ -1,18 +1,18 @@
 package Pck_Model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Agenda_04 {
     private int a04_codigo;
     private String a04_titulo;
     private String a04_descricao;
     private int a04_status_dt_limite;
-    private LocalDate a04_data_limite;
+    private Date a04_data_limite;
     private String a04_resultado;
     private Double a04_certeza_resultado;
     private Double a04_contradicao_resultado;
-    private LocalDate a04_dt_cadastro;
-    private LocalDate a04_dt_ultima_alteracao;
+    private Date a04_dt_cadastro;
+    private Date a04_dt_ultima_alteracao;
     private int a01_codigo;
     private int a04_status;
 
@@ -48,11 +48,11 @@ public class Agenda_04 {
         this.a04_status_dt_limite = a04_status_dt_limite;
     }
 
-    public LocalDate getA04_data_limite() {
+    public Date getA04_data_limite() {
         return a04_data_limite;
     }
 
-    public void setA04_data_limite(LocalDate a04_data_limite) {
+    public void setA04_data_limite(Date a04_data_limite) {
         this.a04_data_limite = a04_data_limite;
     }
 
@@ -80,19 +80,19 @@ public class Agenda_04 {
         this.a04_contradicao_resultado = a04_contradicao_resultado;
     }
 
-    public LocalDate getA04_dt_cadastro() {
+    public Date getA04_dt_cadastro() {
         return a04_dt_cadastro;
     }
 
-    public void setA04_dt_cadastro(LocalDate a04_dt_cadastro) {
+    public void setA04_dt_cadastro(Date a04_dt_cadastro) {
         this.a04_dt_cadastro = a04_dt_cadastro;
     }
 
-    public LocalDate getA04_dt_ultima_alteracao() {
+    public Date getA04_dt_ultima_alteracao() {
         return a04_dt_ultima_alteracao;
     }
 
-    public void setA04_dt_ultima_alteracao(LocalDate a04_dt_ultima_alteracao) {
+    public void setA04_dt_ultima_alteracao(Date a04_dt_ultima_alteracao) {
         this.a04_dt_ultima_alteracao = a04_dt_ultima_alteracao;
     }
 
@@ -116,9 +116,8 @@ public class Agenda_04 {
     }
 
     public Agenda_04(int a04_codigo, String a04_titulo, String a04_descricao, int a04_status_dt_limite,
-            LocalDate a04_data_limite, String a04_resultado, Double a04_certeza_resultado,
-            Double a04_contradicao_resultado, LocalDate a04_dt_cadastro, LocalDate a04_dt_ultima_alteracao,
-            int a01_codigo, int a04_status) {
+            Date a04_data_limite, String a04_resultado, Double a04_certeza_resultado, Double a04_contradicao_resultado,
+            Date a04_dt_cadastro, Date a04_dt_ultima_alteracao, int a01_codigo, int a04_status) {
         this.a04_codigo = a04_codigo;
         this.a04_titulo = a04_titulo;
         this.a04_descricao = a04_descricao;
@@ -132,4 +131,5 @@ public class Agenda_04 {
         this.a01_codigo = a01_codigo;
         this.a04_status = a04_status;
     }
+
 }
