@@ -12,18 +12,24 @@ public class ConexaoMySql {
     private static Connection conn = null;
 
     public static Connection conectaBD() {
-
         try {
-            if (conn == null) {
+            if (conn == null || conn.isClosed()) {
                 conn = DriverManager.getConnection(url, user, password);
-                return conn;
-            } else
-                return conn;
-
+            }
+            return conn;
         } catch (SQLException e) {
             System.out.println("Erro ConexaoMySql: " + e.getMessage());
             return null;
         }
+    }
 
+    public static void desconectaBD() {
+        try {
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao fechar a conexão: " + e.getMessage());
+        }
     }
 }
