@@ -31,7 +31,7 @@ public class Agenda_04_View extends JFrame implements ActionListener {
     private Agenda_04_Control oAgenda_04_Control = new Agenda_04_Control();
 
     public Agenda_04_View() {
-        setTitle("Exemplo MVC + DAO Simplificado");
+        setTitle("View Agenda_04");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(17, 3));
 
