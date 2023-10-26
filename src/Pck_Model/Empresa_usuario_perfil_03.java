@@ -1,12 +1,12 @@
 package Pck_Model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Empresa_usuario_perfil_03 {
     private int a01_codigo;
     private int a02_codigo;
-    private LocalDate a03_dt_cadastro;
-    private LocalDate a03_dt_ultima_alteracao;
+    private Date a03_dt_cadastro;
+    private Date a03_dt_ultima_alteracao;
     private int a03_perfil_praviverbem;
     private int a03_perfil_administrador;
     private int a03_perfil_chefe;
@@ -28,19 +28,19 @@ public class Empresa_usuario_perfil_03 {
         this.a02_codigo = a02_codigo;
     }
 
-    public LocalDate getA03_dt_cadastro() {
+    public Date getA03_dt_cadastro() {
         return a03_dt_cadastro;
     }
 
-    public void setA03_dt_cadastro(LocalDate a03_dt_cadastro) {
+    public void setA03_dt_cadastro(Date a03_dt_cadastro) {
         this.a03_dt_cadastro = a03_dt_cadastro;
     }
 
-    public LocalDate getA03_dt_ultima_alteracao() {
+    public Date getA03_dt_ultima_alteracao() {
         return a03_dt_ultima_alteracao;
     }
 
-    public void setA03_dt_ultima_alteracao(LocalDate a03_dt_ultima_alteracao) {
+    public void setA03_dt_ultima_alteracao(Date a03_dt_ultima_alteracao) {
         this.a03_dt_ultima_alteracao = a03_dt_ultima_alteracao;
     }
 
@@ -79,9 +79,8 @@ public class Empresa_usuario_perfil_03 {
     public Empresa_usuario_perfil_03() {
     }
 
-    public Empresa_usuario_perfil_03(int a01_codigo, int a02_codigo, LocalDate a03_dt_cadastro,
-            LocalDate a03_dt_ultima_alteracao, int a03_perfil_praviverbem, int a03_perfil_administrador,
-            int a03_perfil_chefe, int a03_perfil_padrao) {
+    public Empresa_usuario_perfil_03(int a01_codigo, int a02_codigo, Date a03_dt_cadastro, Date a03_dt_ultima_alteracao,
+            int a03_perfil_praviverbem, int a03_perfil_administrador, int a03_perfil_chefe, int a03_perfil_padrao) {
         this.a01_codigo = a01_codigo;
         this.a02_codigo = a02_codigo;
         this.a03_dt_cadastro = a03_dt_cadastro;

@@ -63,7 +63,7 @@ public class Empresa_01_Persistencia {
 
     public Empresa_01 selectEmpresa_01(int a01_codigo) {
         String procedureCall = "{CALL PROC_SELEMPRESA_01(?)}";
-        Empresa_01 empresa = null;
+        Empresa_01 oEmpresa = null;
 
         try (Connection connection = ConexaoMySql.conectaBD();
                 CallableStatement callableStatement = connection.prepareCall(procedureCall)) {
@@ -72,13 +72,13 @@ public class Empresa_01_Persistencia {
             ResultSet rs = callableStatement.executeQuery();
 
             if (rs.next()) {
-                empresa = new Empresa_01();
-                empresa.setA01_codigo(rs.getInt("A01_CODIGO"));
-                empresa.setA01_nome(rs.getString("A01_NOME"));
-                empresa.setA01_descricao(rs.getString("A01_DESCRICAO"));
-                empresa.setA01_status(rs.getInt("A01_STATUS"));
-                empresa.setA01_dt_cadastro(rs.getDate("A01_DT_CADASTRO"));
-                empresa.setA01_dt_ultima_alteracao(rs.getDate("A01_DT_ULTIMA_ALTERACAO"));
+                oEmpresa = new Empresa_01();
+                oEmpresa.setA01_codigo(rs.getInt("A01_CODIGO"));
+                oEmpresa.setA01_nome(rs.getString("A01_NOME"));
+                oEmpresa.setA01_descricao(rs.getString("A01_DESCRICAO"));
+                oEmpresa.setA01_status(rs.getInt("A01_STATUS"));
+                oEmpresa.setA01_dt_cadastro(rs.getDate("A01_DT_CADASTRO"));
+                oEmpresa.setA01_dt_ultima_alteracao(rs.getDate("A01_DT_ULTIMA_ALTERACAO"));
 
             }
 
@@ -86,6 +86,6 @@ public class Empresa_01_Persistencia {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return empresa;
+        return oEmpresa;
     }
 }
