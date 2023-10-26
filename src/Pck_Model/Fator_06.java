@@ -1,18 +1,27 @@
 package Pck_Model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Fator_06 {
     private int a06_codigo;
     private String a06_titulo;
     private String a06_descricao;
+    private int a06_num_sequencia;
     private int a04_codigo;
     private Double a06_certeza_resultante_fator;
     private Double a06_contradicao_resultante_fator;
     private Double a06_resultado_fator;
-    private LocalDate a06_dt_cadastro;
-    private LocalDate a06_dt_ultima_alteracao;
+    private Date a06_dt_cadastro;
+    private Date a06_dt_ultima_alteracao;
     private int a02_codigo;
+
+    public int getA06_num_sequencia() {
+        return a06_num_sequencia;
+    }
+
+    public void setA06_num_sequencia(int a06_num_sequencia) {
+        this.a06_num_sequencia = a06_num_sequencia;
+    }
 
     public int getA06_codigo() {
         return a06_codigo;
@@ -70,19 +79,19 @@ public class Fator_06 {
         this.a06_resultado_fator = a06_resultado_fator;
     }
 
-    public LocalDate getA06_dt_cadastro() {
+    public Date getA06_dt_cadastro() {
         return a06_dt_cadastro;
     }
 
-    public void setA06_dt_cadastro(LocalDate a06_dt_cadastro) {
+    public void setA06_dt_cadastro(Date a06_dt_cadastro) {
         this.a06_dt_cadastro = a06_dt_cadastro;
     }
 
-    public LocalDate getA06_dt_ultima_alteracao() {
+    public Date getA06_dt_ultima_alteracao() {
         return a06_dt_ultima_alteracao;
     }
 
-    public void setA06_dt_ultima_alteracao(LocalDate a06_dt_ultima_alteracao) {
+    public void setA06_dt_ultima_alteracao(Date a06_dt_ultima_alteracao) {
         this.a06_dt_ultima_alteracao = a06_dt_ultima_alteracao;
     }
 
@@ -97,12 +106,13 @@ public class Fator_06 {
     public Fator_06() {
     }
 
-    public Fator_06(int a06_codigo, String a06_titulo, String a06_descricao, int a04_codigo,
+    public Fator_06(int a06_codigo, String a06_titulo, String a06_descricao, int a06_num_sequencia, int a04_codigo,
             Double a06_certeza_resultante_fator, Double a06_contradicao_resultante_fator, Double a06_resultado_fator,
-            LocalDate a06_dt_cadastro, LocalDate a06_dt_ultima_alteracao, int a02_codigo) {
+            Date a06_dt_cadastro, Date a06_dt_ultima_alteracao, int a02_codigo) {
         this.a06_codigo = a06_codigo;
         this.a06_titulo = a06_titulo;
         this.a06_descricao = a06_descricao;
+        this.a06_num_sequencia = a06_num_sequencia;
         this.a04_codigo = a04_codigo;
         this.a06_certeza_resultante_fator = a06_certeza_resultante_fator;
         this.a06_contradicao_resultante_fator = a06_contradicao_resultante_fator;
@@ -111,4 +121,5 @@ public class Fator_06 {
         this.a06_dt_ultima_alteracao = a06_dt_ultima_alteracao;
         this.a02_codigo = a02_codigo;
     }
+
 }

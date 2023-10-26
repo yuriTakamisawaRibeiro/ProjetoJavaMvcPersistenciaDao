@@ -30,7 +30,7 @@ public class Empresa_01_View extends JFrame implements ActionListener {
     public Empresa_01_View() {
         setTitle("View Empresa_01");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(11, 2, 5, 5));
+        setLayout(new GridLayout(11, 2));
 
         addLabelAndField("Nome:", jt_nome = new JTextField());
         addLabelAndField("Descrição:", jt_descricao = new JTextField());
