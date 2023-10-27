@@ -1,6 +1,6 @@
 package Pck_Model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Usuario_02 {
     private int a02_codigo;
@@ -10,8 +10,8 @@ public class Usuario_02 {
     private String a02_codigo_link;
     private String a02_email;
     private int a02_status;
-    private LocalDate a02_dt_cadastro;
-    private LocalDate a02_dt_ultima_alteracao;
+    private Date a02_dt_cadastro;
+    private Date a02_dt_ultima_alteracao;
 
     public int getA02_codigo() {
         return a02_codigo;
@@ -69,28 +69,27 @@ public class Usuario_02 {
         this.a02_status = a02_status;
     }
 
-    public LocalDate getA02_dt_cadastro() {
+    public Date getA02_dt_cadastro() {
         return a02_dt_cadastro;
     }
 
-    public void setA02_dt_cadastro(LocalDate a02_dt_cadastro) {
+    public void setA02_dt_cadastro(Date a02_dt_cadastro) {
         this.a02_dt_cadastro = a02_dt_cadastro;
     }
 
-    public LocalDate getA02_dt_ultima_alteracao() {
+    public Date getA02_dt_ultima_alteracao() {
         return a02_dt_ultima_alteracao;
     }
 
-    public void setA02_dt_ultima_alteracao(LocalDate a02_dt_ultima_alteracao) {
+    public void setA02_dt_ultima_alteracao(Date a02_dt_ultima_alteracao) {
         this.a02_dt_ultima_alteracao = a02_dt_ultima_alteracao;
     }
 
     public Usuario_02() {
-
     }
 
     public Usuario_02(int a02_codigo, String a02_nome, String a02_usuario, String a02_senha, String a02_codigo_link,
-            String a02_email, int a02_status, LocalDate a02_dt_cadastro, LocalDate a02_dt_ultima_alteracao) {
+            String a02_email, int a02_status, Date a02_dt_cadastro, Date a02_dt_ultima_alteracao) {
         this.a02_codigo = a02_codigo;
         this.a02_nome = a02_nome;
         this.a02_usuario = a02_usuario;
