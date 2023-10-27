@@ -1,6 +1,6 @@
 package Pck_Model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 
 public class Usuario_agenda_05 {
     private int a05_codigo;
@@ -11,8 +11,8 @@ public class Usuario_agenda_05 {
     private int a05_perfil_agenda_facilitador;
     private int a05_perfil_agenda_especialista;
     private int a05_perfil_agenda_analista;
-    private LocalDate a05_dt_cadastro;
-    private LocalDate a05_dt_ultima_alteracao;
+    private Date a05_dt_cadastro;
+    private Date a05_dt_ultima_alteracao;
 
     public int getA05_codigo() {
         return a05_codigo;
@@ -78,19 +78,19 @@ public class Usuario_agenda_05 {
         this.a05_perfil_agenda_analista = a05_perfil_agenda_analista;
     }
 
-    public LocalDate getA05_dt_cadastro() {
+    public Date getA05_dt_cadastro() {
         return a05_dt_cadastro;
     }
 
-    public void setA05_dt_cadastro(LocalDate a05_dt_cadastro) {
+    public void setA05_dt_cadastro(Date a05_dt_cadastro) {
         this.a05_dt_cadastro = a05_dt_cadastro;
     }
 
-    public LocalDate getA05_dt_ultima_alteracao() {
+    public Date getA05_dt_ultima_alteracao() {
         return a05_dt_ultima_alteracao;
     }
 
-    public void setA05_dt_ultima_alteracao(LocalDate a05_dt_ultima_alteracao) {
+    public void setA05_dt_ultima_alteracao(Date a05_dt_ultima_alteracao) {
         this.a05_dt_ultima_alteracao = a05_dt_ultima_alteracao;
     }
 
@@ -99,8 +99,8 @@ public class Usuario_agenda_05 {
 
     public Usuario_agenda_05(int a05_codigo, int a04_codigo, int a02_codigo, int a05_num_sequencia,
             int a05_perfil_agenda_usuario_titular, int a05_perfil_agenda_facilitador,
-            int a05_perfil_agenda_especialista, int a05_perfil_agenda_analista, LocalDate a05_dt_cadastro,
-            LocalDate a05_dt_ultima_alteracao) {
+            int a05_perfil_agenda_especialista, int a05_perfil_agenda_analista, Date a05_dt_cadastro,
+            Date a05_dt_ultima_alteracao) {
         this.a05_codigo = a05_codigo;
         this.a04_codigo = a04_codigo;
         this.a02_codigo = a02_codigo;

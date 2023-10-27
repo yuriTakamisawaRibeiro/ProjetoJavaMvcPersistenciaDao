@@ -19,7 +19,7 @@ import Pck_Control.Parecer_fator_usuario_07_Control;
 import Pck_Model.Parecer_fator_usuario_07;
 
 public class Parecer_fator_usuario_07_View extends JFrame implements ActionListener {
-    private JTextField jt_a07_codigo, jt_a06_codigo, jt_a02_codigo, jt_a07_num_sequencia, jt_a07_certeza,
+    private JTextField jt_a06_codigo, jt_a02_codigo, jt_a07_num_sequencia, jt_a07_certeza,
             jt_a07_contradicao,
             jt_a07_dt_cadastro, jt_a07_dt_ultima_alteracao;
     private JButton jb_inserir, jb_excluir, jb_selecionar, jb_atualizar;
