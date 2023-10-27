@@ -195,7 +195,7 @@ public class Usuario_agenda_05_View extends JFrame implements ActionListener {
 
     private void showUpdateDialog(Usuario_agenda_05 usuario) {
         JDialog popup = new JDialog(this, "Atualizar Usuário", true);
-        popup.setLayout(new GridLayout(9, 2));
+        popup.setLayout(new GridLayout(16, 2));
 
         JTextField jt_a04Codigo = new JTextField(Integer.toString(usuario.getA04_codigo()));
         JTextField jt_a02Codigo = new JTextField(Integer.toString(usuario.getA02_codigo()));

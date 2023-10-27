@@ -62,7 +62,7 @@ public class Fator_06_view extends JFrame implements ActionListener {
         add(jt_codigoSelecao);
         add(jb_selecionar);
 
-        // Adicione o campo de código para atualização
+        
         addLabelAndField("Código para Atualizar:", jt_codigoAtualizacao = new JTextField());
         add(new JLabel());
         add(jb_atualizar);
@@ -80,7 +80,7 @@ public class Fator_06_view extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jb_inserir) {
             try {
-                // Obtenha os valores dos campos da interface.
+               
                 String titulo = jt_titulo.getText();
                 String descricao = jt_descricao.getText();
                 int numSequencia = Integer.parseInt(jt_num_sequencia.getText());
@@ -91,7 +91,7 @@ public class Fator_06_view extends JFrame implements ActionListener {
                 Date dtCadastro = parseDate(jt_dt_cadastro.getText());
                 Date dtUltimaAlteracao = parseDate(jt_dt_ultima_alteracao.getText());
 
-                // Crie um objeto Fator_06 com os dados apropriados.
+                
                 Fator_06 fator = new Fator_06();
                 fator.setA06_titulo(titulo);
                 fator.setA06_descricao(descricao);
@@ -105,7 +105,7 @@ public class Fator_06_view extends JFrame implements ActionListener {
 
                 oFator_06_Control.inserirFator(fator);
 
-                // Limpe os campos da interface após a inserção.
+                
                 clearFields();
                 JOptionPane.showMessageDialog(this, "Inserido com sucesso!");
             } catch (Exception ex) {
@@ -114,11 +114,11 @@ public class Fator_06_view extends JFrame implements ActionListener {
             }
         } else if (e.getSource() == jb_excluir) {
             try {
-                // Obtenha o código do fator a ser excluído do campo de texto.
+                
                 int codigoExclusao = Integer.parseInt(jt_codigoExclusao.getText());
                 oFator_06_Control.deletarFator(codigoExclusao);
 
-                // Limpe o campo de texto após a exclusão.
+                
                 jt_codigoExclusao.setText("");
 
                 JOptionPane.showMessageDialog(this, "Fator excluído com sucesso!");
@@ -132,7 +132,7 @@ public class Fator_06_view extends JFrame implements ActionListener {
                 Fator_06 fatorSelecionado = oFator_06_Control.selecionarFator(codigoSelecao);
 
                 if (fatorSelecionado != null) {
-                    // Exiba as informações do fator selecionado
+                   
                     JOptionPane.showMessageDialog(this, getFatorInfo(fatorSelecionado), "Fator Selecionado",
                             JOptionPane.INFORMATION_MESSAGE);
                 } else {
@@ -166,7 +166,7 @@ public class Fator_06_view extends JFrame implements ActionListener {
     }
 
     private String getFatorInfo(Fator_06 fator) {
-        // Construa uma string com as informações do fator
+        
         String infoFator = "Título: " + fator.getA06_titulo() + "\n" +
                 "Descrição: " + fator.getA06_descricao() + "\n" +
                 "Número de Sequência: " + fator.getA06_num_sequencia() + "\n" +
@@ -196,16 +196,16 @@ public class Fator_06_view extends JFrame implements ActionListener {
         popup.setLayout(new GridLayout(17, 2));
 
         JTextField jt_titulo = new JTextField(fator.getA06_titulo());
-        JTextField jt_descricao = new JTextField(fator.getA06_descricao());
-        JTextField jt_num_sequencia = new JTextField(Integer.toString(fator.getA06_num_sequencia()));
-        JTextField jt_a04_codigo = new JTextField(Integer.toString(fator.getA04_codigo()));
-        JTextField jt_certeza_resultante_fator = new JTextField(
-                Double.toString(fator.getA06_certeza_resultante_fator()));
-        JTextField jt_contradicao_resultante_fator = new JTextField(
-                Double.toString(fator.getA06_contradicao_resultante_fator()));
-        JTextField jt_resultado_fator = new JTextField(Double.toString(fator.getA06_resultado_fator()));
-        JTextField jt_dt_cadastro = new JTextField(fator.getA06_dt_cadastro().toString());
-        JTextField jt_dt_ultima_alteracao = new JTextField(fator.getA06_dt_ultima_alteracao().toString());
+    JTextField jt_descricao = new JTextField(fator.getA06_descricao());
+    JTextField jt_num_sequencia = new JTextField(String.valueOf(fator.getA06_num_sequencia()));
+    JTextField jt_a04_codigo = new JTextField(String.valueOf(fator.getA04_codigo()));
+    JTextField jt_certeza_resultante_fator = new JTextField(
+            String.valueOf(fator.getA06_certeza_resultante_fator()));
+    JTextField jt_contradicao_resultante_fator = new JTextField(
+            String.valueOf(fator.getA06_contradicao_resultante_fator()));
+    JTextField jt_resultado_fator = new JTextField(String.valueOf(fator.getA06_resultado_fator()));
+    JTextField jt_dt_cadastro = new JTextField(fator.getA06_dt_cadastro().toString());
+    JTextField jt_dt_ultima_alteracao = new JTextField(fator.getA06_dt_ultima_alteracao().toString());
 
         JButton jb_confirmar = new JButton("Confirmar");
         JButton jb_cancelar = new JButton("Cancelar");
@@ -235,17 +235,17 @@ public class Fator_06_view extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fator.setA06_titulo(jt_titulo.getText());
-                fator.setA06_descricao(jt_descricao.getText());
-                fator.setA06_num_sequencia(Integer.parseInt(jt_num_sequencia.getText()));
-                fator.setA04_codigo(Integer.parseInt(jt_a04_codigo.getText()));
-                fator.setA06_certeza_resultante_fator(Double.parseDouble(jt_certeza_resultante_fator.getText()));
-                fator.setA06_contradicao_resultante_fator(
-                        Double.parseDouble(jt_contradicao_resultante_fator.getText()));
-                fator.setA06_resultado_fator(Double.parseDouble(jt_resultado_fator.getText()));
-                fator.setA06_dt_cadastro(Date.valueOf(jt_dt_cadastro.getText()));
-                fator.setA06_dt_ultima_alteracao(Date.valueOf(jt_dt_ultima_alteracao.getText()));
+            fator.setA06_descricao(jt_descricao.getText());
+            fator.setA06_num_sequencia(Integer.parseInt(jt_num_sequencia.getText()));
+            fator.setA04_codigo(Integer.parseInt(jt_a04_codigo.getText()));
+            fator.setA06_certeza_resultante_fator(Double.parseDouble(jt_certeza_resultante_fator.getText()));
+            fator.setA06_contradicao_resultante_fator(
+                    Double.parseDouble(jt_contradicao_resultante_fator.getText()));
+            fator.setA06_resultado_fator(Double.parseDouble(jt_resultado_fator.getText()));
+            fator.setA06_dt_cadastro(Date.valueOf(jt_dt_cadastro.getText()));
+            fator.setA06_dt_ultima_alteracao(Date.valueOf(jt_dt_ultima_alteracao.getText()));
 
-                // Fechar o diálogo
+                
                 popup.dispose();
             }
         });

@@ -58,7 +58,7 @@ public class Empresa_01_View extends JFrame implements ActionListener {
         add(jt_codigoSelecao);
         add(jb_selecionar);
 
-        // Adicione o campo de código para atualização
+     
         addLabelAndField("Código para Atualizar:", jt_codigoAtualizacao = new JTextField());
         add(new JLabel());
         add(jb_atualizar);
@@ -76,14 +76,14 @@ public class Empresa_01_View extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jb_inserir) {
             try {
-                // Obtenha os valores dos campos da interface.
+               
                 String nome = jt_nome.getText();
                 String descricao = jt_descricao.getText();
                 int status = Integer.parseInt(jt_status.getText());
                 Date dtCadastro = parseDate(jt_dt_cadastro.getText());
                 Date dtUltimaAlteracao = parseDate(jt_dt_ultima_alteracao.getText());
 
-                // Crie um objeto Empresa_01 com os dados apropriados.
+                
                 Empresa_01 empresa = new Empresa_01();
                 empresa.setA01_nome(nome);
                 empresa.setA01_descricao(descricao);
@@ -93,7 +93,7 @@ public class Empresa_01_View extends JFrame implements ActionListener {
 
                 oEmpresa_01_Control.inserirEmpresa(empresa);
 
-                // Limpe os campos da interface após a inserção.
+              
                 clearFields();
                 JOptionPane.showMessageDialog(this, "Inserido com sucesso!");
             } catch (Exception ex) {
@@ -102,11 +102,11 @@ public class Empresa_01_View extends JFrame implements ActionListener {
             }
         } else if (e.getSource() == jb_excluir) {
             try {
-                // Obtenha o código da empresa a ser excluída do campo de texto.
+                
                 int codigoExclusao = Integer.parseInt(jt_codigoExclusao.getText());
                 oEmpresa_01_Control.deletarEmpresa(codigoExclusao);
 
-                // Limpe o campo de texto após a exclusão.
+                
                 jt_codigoExclusao.setText("");
 
                 JOptionPane.showMessageDialog(this, "Empresa excluída com sucesso!");
@@ -120,7 +120,7 @@ public class Empresa_01_View extends JFrame implements ActionListener {
                 Empresa_01 empresaSelecionada = oEmpresa_01_Control.selecionarEmpresa(codigoSelecao);
 
                 if (empresaSelecionada != null) {
-                    // Exiba as informações da empresa selecionada
+                    
                     JOptionPane.showMessageDialog(this, getEmpresaInfo(empresaSelecionada), "Empresa Selecionada",
                             JOptionPane.INFORMATION_MESSAGE);
                 } else {
@@ -154,7 +154,7 @@ public class Empresa_01_View extends JFrame implements ActionListener {
     }
 
     private String getEmpresaInfo(Empresa_01 empresa) {
-        // Construa uma string com as informações da empresa
+       
         String infoEmpresa = "Nome: " + empresa.getA01_nome() + "\n" +
                 "Descrição: " + empresa.getA01_descricao() + "\n" +
                 "Status: " + empresa.getA01_status() + "\n" +

@@ -82,6 +82,7 @@ public class Fator_06_Persistencia {
             if (rs.next()) {
                 oFator06 = new Fator_06();
                 oFator06.setA06_codigo(rs.getInt("A06_CODIGO"));
+                oFator06.setA06_titulo(rs.getString("A06_TITULO"));
                 oFator06.setA06_descricao(rs.getString("A06_DESCRICAO"));
                 oFator06.setA06_num_sequencia(rs.getInt("A06_NUM_SEQUENCIA"));
                 oFator06.setA04_codigo(rs.getInt("A04_CODIGO"));

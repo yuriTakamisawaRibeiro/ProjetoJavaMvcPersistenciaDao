@@ -80,7 +80,7 @@ public class Empresa_Usuario_Perfil_03_View extends JFrame implements ActionList
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == jb_inserir) {
             try {
-                // Obtenha os valores dos campos da interface.
+                
                 int a01_codigo = Integer.parseInt(jt_a01_codigo.getText());
                 Date a03_dt_cadastro = parseDate(jt_a03_dt_cadastro.getText());
                 Date a03_dt_ultima_alteracao = parseDate(jt_a03_dt_ultima_alteracao.getText());
@@ -89,14 +89,14 @@ public class Empresa_Usuario_Perfil_03_View extends JFrame implements ActionList
                 int a03_perfil_chefe = Integer.parseInt(jt_a03_perfil_chefe.getText());
                 int a03_perfil_padrao = Integer.parseInt(jt_a03_perfil_padrao.getText());
 
-                // Crie um objeto Empresa_usuario_perfil_03 com os dados apropriados.
+                
                 Empresa_usuario_perfil_03 empresaUsuarioPerfil03 = new Empresa_usuario_perfil_03(a01_codigo,
                         a03_perfil_padrao, a03_dt_cadastro, a03_dt_ultima_alteracao, a03_perfil_praviverbem,
                         a03_perfil_administrador, a03_perfil_chefe, a03_perfil_padrao);
 
                 oEmpresa_Usuario_Perfil_03_Control.inserirEmpresaUsuarioPerfil03(empresaUsuarioPerfil03);
 
-                // Limpe os campos da interface após a inserção.
+                
                 clearFields();
                 JOptionPane.showMessageDialog(this, "Inserido com sucesso!");
             } catch (Exception ex) {
@@ -105,11 +105,11 @@ public class Empresa_Usuario_Perfil_03_View extends JFrame implements ActionList
             }
         } else if (e.getSource() == jb_excluir) {
             try {
-                // Obtenha o código A02 da empresa a ser excluída do campo de texto.
+                
                 int a02_codigoExclusao = Integer.parseInt(jt_a02_codigoExclusao.getText());
                 oEmpresa_Usuario_Perfil_03_Control.deletarEmpresaUsuarioPerfil03(a02_codigoExclusao);
 
-                // Limpe o campo de texto após a exclusão.
+               
                 jt_a02_codigoExclusao.setText("");
 
                 JOptionPane.showMessageDialog(this, "Empresa excluída com sucesso!");
@@ -124,7 +124,7 @@ public class Empresa_Usuario_Perfil_03_View extends JFrame implements ActionList
                         .selecionarEmpresaUsuarioPerfil03(a02_codigoSelecao);
 
                 if (empresaSelecionada != null) {
-                    // Exiba as informações da empresa selecionada
+                    
                     JOptionPane.showMessageDialog(this, getEmpresaInfo(empresaSelecionada), "Empresa Selecionada",
                             JOptionPane.INFORMATION_MESSAGE);
                 } else {
@@ -159,7 +159,7 @@ public class Empresa_Usuario_Perfil_03_View extends JFrame implements ActionList
     }
 
     private String getEmpresaInfo(Empresa_usuario_perfil_03 empresa) {
-        // Construa uma string com as informações da empresa
+        
         String infoEmpresa = "Código A01: " + empresa.getA01_codigo() + "\n" +
                 "Código A02: " + empresa.getA02_codigo() + "\n" +
                 "Data de Cadastro: " + empresa.getA03_dt_cadastro() + "\n" +

@@ -13,12 +13,12 @@ public class Fator_06_Control {
         return fatorPersistencia.selectFator(a06_codigo);
     }
 
-    public void inserirFator(Fator_06 oFator06) throws SQLException {
-        fatorPersistencia.insertFator(oFator06);
+    public void inserirFator(Fator_06 fator06) throws SQLException {
+        fatorPersistencia.insertFator(fator06);
     }
 
-    public void alterarFator(Fator_06 oFator06) throws SQLException {
-        fatorPersistencia.updateFator(oFator06);
+    public void alterarFator(Fator_06 fator06) throws SQLException {
+        fatorPersistencia.updateFator(fator06);
     }
 
     public void deletarFator(int a06_codigo) throws SQLException {
