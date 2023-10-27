@@ -29,7 +29,9 @@ public class Parecer_fator_usuario_07_Dao {
                 + "A07_CERTEZA DOUBLE,"
                 + "A07_CONTRADICAO DOUBLE,"
                 + "A07_DT_CADASTRO DATE,"
-                + "A07_DT_ULTIMA_ALTERACAO DATE)";
+                + "A07_DT_ULTIMA_ALTERACAO DATE,"
+                + "FOREIGN KEY (A06_CODIGO) REFERENCES FATOR_06(A06_CODIGO),"
+                + "FOREIGN KEY (A02_CODIGO) REFERENCES USUARIO_02(A02_CODIGO))";
 
         try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
             statement.executeUpdate();

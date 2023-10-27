@@ -21,14 +21,15 @@ public class Empresa_Usuario_Perfil_03_Dao {
         }
 
         String createTableSQL = "CREATE TABLE IF NOT EXISTS EMPRESA_USUARIO_PERFIL_03 ("
-                + "A02_CODIGO INT(11) PRIMARY KEY AUTO_INCREMENT ,"
-                + "A01_CODIGO INT(11) ,"
+                + "A02_CODIGO INT(11) PRIMARY KEY AUTO_INCREMENT,"
+                + "A01_CODIGO INT(11),"
                 + "A03_DT_CADASTRO DATE,"
                 + "A03_DT_ULTIMA_ALTERACAO DATE,"
                 + "A03_PERFIL_PRAVIVERBEM TINYINT(1),"
                 + "A03_PERFIL_ADMINISTRADOR TINYINT(1),"
                 + "A03_PERFIL_CHEFE TINYINT(1),"
-                + "A03_PERFIL_PADRAO TINYINT(1))";
+                + "A03_PERFIL_PADRAO TINYINT(1),"
+                + "FOREIGN KEY (A01_CODIGO) REFERENCES EMPRESA_01(A01_CODIGO))";
 
         try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
             statement.executeUpdate();

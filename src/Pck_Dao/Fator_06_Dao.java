@@ -29,7 +29,9 @@ public class Fator_06_Dao {
                 + "A06_RESULTADO_FATOR TEXT,"
                 + "A06_DT_CADASTRO DATE,"
                 + "A06_DT_ULTIMA_ALTERACAO DATE,"
-                + "A02_CODIGO INT(11))";
+                + "A02_CODIGO INT(11),"
+                + "FOREIGN KEY (A04_CODIGO) REFERENCES AGENDA_04(A04_CODIGO),"
+                + "FOREIGN KEY (A02_CODIGO) REFERENCES PARECER_FATOR_USUARIO_07(A02_CODIGO))";
 
         try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
             statement.executeUpdate();

@@ -32,8 +32,9 @@ public class Agenda_04_Dao {
                 + "A04_CONTRADICAO_RESULTADO DOUBLE,"
                 + "A04_DT_CADASTRO DATE,"
                 + "A04_DT_ULTIMA_ALTERACAO DATE,"
-                + "A01_CODIGO INT(11),"
-                + "A04_STATUS INT(3))";
+                + "A01_CODIGO INT(11)," // Campo de referência à Empresa_01
+                + "A04_STATUS INT(3),"
+                + "FOREIGN KEY (A01_CODIGO) REFERENCES EMPRESA_01(A01_CODIGO))";
 
         try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
             statement.executeUpdate();

@@ -31,7 +31,9 @@ public class Usuario_agenda_05_Dao {
                 + "A05_PERFIL_AGENDA_USUARIO_ESPECIALISTA TINYINT(1),"
                 + "A05_PERFIL_AGENDA_USUARIO_ANALISTA TINYINT(1),"
                 + "A05_DT_CADASTRO DATE,"
-                + "A05_DT_ULTIMA_ALTERACAO DATE)";
+                + "A05_DT_ULTIMA_ALTERACAO DATE,"
+                + "FOREIGN KEY (A02_CODIGO) REFERENCES USUARIO_02(A02_CODIGO),"
+                + "FOREIGN KEY (A04_CODIGO) REFERENCES AGENDA_04(A04_CODIGO))";
 
         try (PreparedStatement statement = connection.prepareStatement(createTableSQL)) {
             statement.executeUpdate();
